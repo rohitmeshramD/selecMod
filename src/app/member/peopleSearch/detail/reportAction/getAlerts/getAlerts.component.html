@@ -1,0 +1,34 @@
+<div class="modal fade" id="get-alerts-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog get-alerts-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span>GET ALERTS</span>
+          <span data-dismiss="modal" aria-label="Close">&times;</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-content">
+          <div class="modal-body-content__alerts-on">
+            <img src="../../../../../../../assets/search_flow/ic-confirmed.svg">
+            <p><b>ALERTS ON</b></p>
+          </div>
+          <p>You are now monitoring this report and will receive notifications any time a change occurs.</p>
+          <p>*If you do not wish to receive notifications about this report, please toggle off below.</p>
+          <div class="modal-body-content__set-monitoring">
+            <label>Monitoring</label>
+            <ui-switch size="small" switchColor="#ffffff" defaultBgColor="red" defaultBoColor="#fff0"
+              checkedLabel="on" uncheckedLabel="off" (change)="handleSetMonitoring($event)"></ui-switch>
+          </div>
+        </div>
+        <div class="footer-content">
+          <div class="text-center">
+            <div class="btn-close" data-dismiss="modal" aria-label="Close">
+              <span>CLOSE WINDOW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

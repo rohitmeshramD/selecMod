@@ -1,0 +1,22 @@
+.btn-direction {
+  display: flex;
+  align-items: center;
+  border: 1px solid #276FCF;
+  border-radius: 6px;
+  padding: 3px 30px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+
+  span {
+    margin-top: 1px;
+  }
+  svg {
+    &:first-child {
+      margin-right: 8px;
+    }
+    &:last-child {
+      margin-left: 8px;
+    }
+  }
+}

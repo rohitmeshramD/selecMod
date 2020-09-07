@@ -1,0 +1,15 @@
+<div class="next-report">
+  <h2>More Information</h2>
+  <h1>{{ title }}</h1>
+  <p>{{ desc }}</p>
+  <img [src]="imgUrl">
+  <span [tooltip]="continue" content-type="template">
+    <app-icon-button text="CONTINUE" className="btn-continue" type="gold" color="white" [rounded]="true"
+      [fullWidth]="false" [shadow]="false" (onClick)="goNext()">
+    </app-icon-button>
+  </span>
+</div>
+
+<ng-template #continue>
+  <app-tutorial-modal desc="Click CONTINUE to view the next report."></app-tutorial-modal>
+</ng-template>

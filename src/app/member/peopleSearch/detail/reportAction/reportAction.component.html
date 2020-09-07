@@ -1,0 +1,71 @@
+<div class="report-action">
+  <div class="report-action-item">
+    <div class="report-action-item__top row">
+      <div class="col-md-3 col-sm-3">
+        <img src="../../../../../../assets/search_flow/ic-note.svg">
+      </div>
+      <div class="col-md-9 col-sm-9">
+        <p>Add a public or private note to this report</p>
+      </div>
+    </div>
+    <div class="report-action-item__bottom">
+      <span data-toggle="modal" data-target="#add-note-modal" [tooltip]="addNoteAction" content-type="template" width="300">
+        <app-icon-button text="ADD A NOTE" className="btn-add-note" type="green" color="white" [rounded]="false"
+          [fullWidth]="false" [shadow]="false" icon="edit" (onClick)="addNote()">
+        </app-icon-button>
+      </span>
+    </div>
+    <app-modal-add-note></app-modal-add-note>
+  </div>
+
+  <div class="report-action-item">
+    <div class="report-action-item__top row">
+      <div class="col-md-3 col-sm-3">
+        <img src="../../../../../../assets/search_flow/ic-save.svg">
+      </div>
+      <div class="col-md-9 col-sm-9">
+        <p>Save a copy of this report for later</p>
+      </div>
+    </div>
+    <div class="report-action-item__bottom">
+      <span data-toggle="modal" data-target="#save-report-modal" [tooltip]="saveReportAction" content-type="template">
+        <app-icon-button text="SAVE REPORT" className="btn-add-note" type="green" color="white" [rounded]="false"
+          [fullWidth]="false" [shadow]="false" icon="download" (onClick)="addNote()">
+        </app-icon-button>
+      </span>
+    </div>
+    <app-modal-save-report [downloadPath]="downloadPath"></app-modal-save-report>
+  </div>
+
+  <div class="report-action-item">
+    <div class="report-action-item__top row">
+      <div class="col-md-3 col-sm-3">
+        <img src="../../../../../../assets/search_flow/ic-monitor.svg">
+      </div>
+      <div class="col-md-9 col-sm-9">
+        <p>Monitor this report and notify me of any changes</p>
+      </div>
+    </div>
+    <div class="report-action-item__bottom">
+      <span data-toggle="modal" data-target="#get-alerts-modal" [tooltip]="getAlertsAction" content-type="template">
+        <app-icon-button text="GET ALERTS" className="btn-add-note" type="green" color="white" [rounded]="false"
+          [fullWidth]="false" [shadow]="false" icon="bell" (onClick)="addNote()">
+        </app-icon-button>
+      </span>
+    </div>
+    <app-modal-get-alerts (setMonitoring)="handleSetMonitoring($event)"></app-modal-get-alerts>
+  </div>
+</div>
+
+
+<ng-template #addNoteAction>
+  <app-tutorial-modal desc="Click ADD A NOTE to create a public or private note for this report."></app-tutorial-modal>
+</ng-template>
+
+<ng-template #saveReportAction>
+  <app-tutorial-modal desc="Click SAVE REPORT to download report."></app-tutorial-modal>
+</ng-template>
+
+<ng-template #getAlertsAction>
+  <app-tutorial-modal desc="Click GET ALERTS to monitor this report."></app-tutorial-modal>
+</ng-template>

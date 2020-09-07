@@ -1,0 +1,1012 @@
+@import "../../../../../../styles/variables.scss";
+
+.margin {
+  margin: 100px 0;
+}
+
+.d-md-none {
+  display: none;
+}
+
+.mini-reports {
+  &-header {
+    padding: 80px 40px 0;
+    border-bottom: 1px solid $border-secondary;
+    margin: 0;
+
+    &__desc {
+      h2 {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 37px;
+        color: $back-blue;
+      }
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-primary;
+      }
+    }
+    &__img {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .icon-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right: 140px;
+        width: 150px;
+
+        & > img {
+          margin-bottom: 16px;
+
+          &:last-child {
+            margin-right: 20px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  &-body {
+    padding: 0 41px 96px;
+    border-bottom: 1px solid #dcdcdc;
+
+    &-diagram {
+      height: 600px;
+      position: relative;
+
+      &__content {
+        width: 950px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        .info-item {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          width: 100%;
+          top: 43%;
+
+          .item-text {
+            width: 200px;
+
+            p {
+              margin-bottom: 0;
+
+              &:nth-child(1) {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 25px;
+                text-align: right;
+                color: $color-primary;
+                margin-bottom: 8px;
+              }
+              &:nth-child(3) {
+                position: absolute;
+              }
+            }
+
+            // a{
+
+            // }
+          }
+          img {
+            margin-right: 10px;
+            width: 70px;
+          }
+          .small-circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 13px;
+          }
+          .smaller-circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+          &--birth {
+            .small-circle {
+              background: #e8916a;
+            }
+            .smaller-circle {
+              background: #e8916a;
+            }
+            .item-text {
+              p {
+                text-align: right;
+              }
+            }
+          }
+          &--age {
+            transform: rotate(60deg);
+
+            .small-circle {
+              background: #5b92db;
+            }
+            .smaller-circle {
+              background: #5b92db;
+            }
+            .item-text {
+              transform: rotate(-60deg) translate(-75px, 115px);
+              p {
+                text-align: right;
+              }
+            }
+            img {
+              transform: rotate(-60deg);
+            }
+          }
+          &--location {
+            transform: rotate(120deg);
+
+            .item-text {
+              transform: rotate(-120deg) translate(77px, 114px);
+
+              p:first-child,
+              p:last-child,
+              p {
+                text-align: left;
+              }
+            }
+            .small-circle {
+              background: #a0e9dd;
+            }
+            .smaller-circle {
+              background: #a0e9dd;
+            }
+            img {
+              transform: rotate(-120deg);
+            }
+          }
+          &--zodiac {
+            transform: rotate(180deg);
+
+            .item-text {
+              transform: rotate(60deg) translate(40px, -36px);
+
+              p:first-child,
+              p:last-child,
+              p {
+                text-align: left;
+              }
+            }
+            .small-circle {
+              background: #b0a8e7;
+            }
+            .smaller-circle {
+              background: #b0a8e7;
+            }
+            .item-text {
+              transform: rotate(180deg);
+            }
+            img {
+              transform: rotate(180deg);
+            }
+          }
+          &--phone {
+            transform: rotate(240deg);
+
+            .small-circle {
+              background: #b6b7bc;
+            }
+            .smaller-circle {
+              background: #b6b7bc;
+            }
+            .item-text {
+              transform: rotate(120deg) translate(70px, -105px);
+
+              p:first-child,
+              p:last-child,
+              p {
+                text-align: left;
+              }
+            }
+            img {
+              transform: rotate(120deg);
+            }
+          }
+          &--email {
+            transform: rotate(-60deg);
+            position: relative;
+
+            .small-circle {
+              background: #f8da8a;
+            }
+            .smaller-circle {
+              background: #f8da8a;
+            }
+            .item-text {
+              transform: rotate(60deg) translate(-70px, -120px);
+
+              & > div {
+                width: 100%;
+                position: absolute;
+                max-height: 150px;
+                overflow-y: auto;
+
+                p {
+                  text-align: right;
+                }
+                .btn-see-more {
+                  a {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+            img {
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+      &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        img {
+          margin: 0 auto;
+          width: 350px;
+        }
+        p {
+          margin: auto;
+          margin-top: 340px;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 36px;
+          line-height: 42px;
+          text-align: center;
+          color: $back-blue;
+        }
+      }
+    }
+    &-phone {
+      background: $white;
+      border: 1px solid $color-secondary;
+      box-sizing: border-box;
+      border-radius: 6px;
+      padding: 48px 8px 48px;
+
+      .phone-item {
+        margin: 0;
+        border-bottom: 1px solid $border-secondary;
+        padding: 12px 120px 12px;
+
+        &:last-child {
+          border-bottom: none;
+        }
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 25px;
+          color: $color-primary;
+        }
+        .phone-number {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 25px;
+          color: $back-blue;
+        }
+      }
+    }
+    &-me {
+      margin: 24px 0;
+      display: flex;
+      justify-content: flex-end;
+
+      .switch {
+        border: 1px solid #acacac;
+        box-sizing: border-box;
+        border-radius: 6px;
+        width: 256px;
+        height: 76px;
+        display: flex;
+        padding: 24px;
+        align-items: center;
+
+        p {
+          font-style: normal;
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 28px;
+          text-align: center;
+          color: #525252;
+          margin: 0;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  &-footer {
+    padding: 89px 85px 0;
+    margin: 0;
+
+    & > div:first-child {
+      display: flex;
+
+      & > div {
+        padding: 0 65px;
+        flex-grow: 1;
+
+        app-report-action,
+        app-next-report {
+          height: 100%;
+        }
+      }
+    }
+    & > div:last-child {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding: 37px 0;
+    }
+  }
+}
+
+.max-width {
+  max-width: 70px;
+}
+@media (max-width: 1050px) {
+  .mini-reports {
+    &-body {
+      &-diagram {
+        &__content {
+          width: 100%;
+
+          .info-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .d-sm-block {
+    display: block;
+  }
+
+  .mini-reports {
+    &-header {
+      padding: 40px 40px 0;
+
+      &__desc {
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+      &__img {
+        .icon-wrapper {
+          margin: 0;
+          width: 75px;
+          align-items: flex-end;
+
+          img {
+            margin-bottom: 12px;
+            width: 80%;
+
+            &:last-child {
+              width: 99%;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    &-body {
+      &-diagram {
+        &__back {
+          img {
+            width: 32%;
+          }
+          p {
+            font-size: 28px;
+            line-height: 32px;
+          }
+        }
+        &__content {
+          .info-item {
+            width: 98%;
+
+            .item-text {
+              width: 160px;
+
+              p:first-child {
+                font-size: 16px;
+                margin-bottom: 4px;
+              }
+              p:last-child {
+                font-size: 16px;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      &-phone {
+        .phone-item {
+          padding: 12px 40px 12px;
+
+          p {
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 4px;
+          }
+          .phone-number {
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+      }
+      &-me {
+        margin: 16px 0;
+
+        .switch {
+          padding: 24px 40px;
+          width: 232px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          p {
+            font-size: 20px;
+            line-height: 23px;
+          }
+        }
+      }
+    }
+    &-footer {
+      padding: 54px 30px 0;
+
+      & > div:first-child {
+        div {
+          padding: 0 10px 0;
+        }
+      }
+      & > div:last-child {
+        padding: 32px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .mini-reports {
+    &-body {
+      &-diagram {
+        &__back {
+          img {
+            width: 24%;
+          }
+          p {
+            font-size: 21px;
+            line-height: 24px;
+            margin-top: 320px;
+          }
+        }
+        &__content {
+          .info-item {
+            width: 100%;
+
+            .item-text {
+              width: 145px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mini-reports {
+    &-header {
+      padding: 40px 20px 0;
+
+      &__desc {
+        p {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      &__img {
+        .icon-wrapper {
+          width: 55px;
+
+          img {
+            margin-bottom: 12px;
+            width: 80%;
+
+            &:last-child {
+              width: 99%;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    &-body {
+      padding: 40px 20px;
+
+      &-diagram {
+        &__back {
+          img {
+            width: 25%;
+          }
+          p {
+            font-size: 16px;
+            line-height: 21px;
+          }
+        }
+        &__content {
+          .info-item {
+            width: 100%;
+            top: 47%;
+
+            img {
+              width: 30px;
+            }
+            .item-text {
+              width: 25%;
+
+              p {
+                font-size: 10px;
+                line-height: 14px;
+
+                &:first-child {
+                  margin-bottom: 4;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+              }
+            }
+
+            &--birth {
+              .item-text {
+                transform: translate(12px, 40px);
+              }
+            }
+            &--age {
+              .item-text {
+                transform: rotate(-60deg) translate(-49px, 126px);
+              }
+            }
+            &--location {
+              .item-text {
+                transform: rotate(-120deg) translate(48px, 121px);
+              }
+            }
+            &--zodiac {
+              .item-text {
+                transform: rotate(180deg) translate(-13px, 40px);
+              }
+            }
+            &--phone {
+              .item-text {
+                transform: rotate(120deg) translate(45px, -33px);
+              }
+            }
+            &--email {
+              .item-text {
+                transform: rotate(60deg) translate(-38px, -39px);
+
+                p {
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+      &-phone {
+        .phone-item {
+          padding: 8px 24px;
+
+          p,
+          b {
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 4px;
+            word-break: break-all;
+          }
+          .phone-number {
+            font-size: 10px;
+            line-height: 12px;
+          }
+        }
+      }
+      &-me {
+        margin: 12px 0;
+
+        .switch {
+          padding: 16px;
+          width: unset;
+          height: unset;
+
+          p {
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+    &-footer {
+      padding: 40px 20px 0;
+
+      & > div:first-child {
+        display: block;
+
+        div {
+          padding: 0 10px 0;
+
+          &:first-child {
+            margin-bottom: 32px;
+          }
+        }
+      }
+      & > div:last-child {
+        padding: 24px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .mini-reports {
+    &-body {
+      &-diagram {
+        &__content {
+          .info-item {
+            top: 46%;
+
+            img {
+              width: 30px;
+            }
+            .item-text {
+              width: 20%;
+
+              p {
+                font-size: 10px;
+                line-height: 14px;
+
+                &:first-child {
+                  margin-bottom: 4;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+              }
+            }
+
+            &--birth {
+              .item-text {
+                transform: translate(26px, 33px);
+              }
+            }
+            &--age {
+              .item-text {
+                transform: rotate(-60deg) translate(-29px, 98px);
+              }
+            }
+            &--location {
+              .item-text {
+                transform: rotate(-120deg) translate(25px, 96px);
+              }
+            }
+            &--zodiac {
+              .item-text {
+                transform: rotate(180deg) translate(-29px, 33px);
+              }
+            }
+            &--phone {
+              .item-text {
+                transform: rotate(120deg) translate(21px, -22px);
+              }
+            }
+            &--email {
+              .item-text {
+                transform: rotate(60deg) translate(-22px, -24px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .mini-reports {
+    &-body {
+      padding-top: 0;
+
+      &-diagram {
+        height: 480px;
+
+        &__back {
+          font-size: 14px;
+
+          img {
+            width: 43%;
+          }
+          p {
+            font-size: 18px;
+            line-height: 21px;
+            margin-top: 283px;
+          }
+        }
+        &__content {
+          .info-item {
+            top: 47%;
+
+            img {
+              width: 30px;
+              margin-left: -10px;
+            }
+            .item-text {
+              width: 16%;
+
+              p {
+                font-size: 10px;
+                line-height: 14px;
+
+                &:first-child {
+                  margin-bottom: 4;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                  font-size: 10px;
+                  line-height: 14px;
+                }
+              }
+            }
+
+            &--birth {
+              .item-text {
+                transform: translate(26px, 33px);
+              }
+            }
+            &--age {
+              .item-text {
+                transform: rotate(-60deg) translate(-24px, 87px);
+              }
+            }
+            &--location {
+              .item-text {
+                transform: rotate(-120deg) translate(20px, 89px);
+              }
+            }
+            &--zodiac {
+              .item-text {
+                transform: rotate(180deg) translate(-29px, 33px);
+              }
+            }
+            &--phone {
+              .item-text {
+                transform: rotate(120deg) translate(16px, -13px);
+              }
+            }
+            &--email {
+              .item-text {
+                transform: rotate(60deg) translate(-18px, -15px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 505px) {
+  .mini-reports {
+    &-body {
+      padding-top: 0;
+
+      &-diagram {
+        height: 500px;
+
+        &__back {
+          img {
+            width: 53%;
+          }
+          p {
+            font-size: 17px;
+            margin-top: 273px;
+          }
+        }
+        &__content {
+          .info-item {
+            img {
+              width: 27px;
+              margin-left: -50px;
+            }
+            .small-circle {
+              width: 8px;
+              height: 8px;
+            }
+            .smaller-circle {
+              width: 5px;
+              height: 5px;
+            }
+            .item-text {
+              width: 22%;
+
+              p {
+                font-size: 9px;
+                line-height: 14px;
+
+                &:first-child {
+                  margin-bottom: 0;
+                  font-size: 9px;
+                  line-height: 14px;
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                  font-size: 9px;
+                  line-height: 14px;
+                }
+              }
+            }
+
+            &--birth {
+              .item-text {
+                transform: translate(-25px, 33px);
+              }
+            }
+            &--age {
+              .item-text {
+                transform: rotate(-60deg) translate(-45px, 40px);
+              }
+            }
+            &--location {
+              .item-text {
+                transform: rotate(-120deg) translate(45px, 40px);
+              }
+            }
+            &--zodiac {
+              .item-text {
+                transform: rotate(180deg) translate(27px, 33px);
+              }
+            }
+            &--phone {
+              .item-text {
+                transform: rotate(120deg) translate(40px, 24px);
+              }
+            }
+            &--email {
+              .item-text {
+                transform: rotate(60deg) translate(-38px, 18px);
+              }
+            }
+          }
+        }
+      }
+      &-phone {
+        .phone-item {
+          padding: 8px 0;
+
+          & > div {
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .mini-reports {
+    &-body {
+      &-diagram {
+        height: 400px;
+
+        &__back {
+          img {
+            width: 53%;
+          }
+          p {
+            font-size: 14px;
+            margin-top: 218px;
+          }
+        }
+        &__content {
+          .info-item {
+            img {
+              width: 27px;
+              margin-left: -60px;
+            }
+            .small-circle {
+              width: 8px;
+              height: 8px;
+            }
+            .smaller-circle {
+              width: 5px;
+              height: 5px;
+            }
+            .item-text {
+              width: 24%;
+
+              p {
+                font-size: 9px;
+                line-height: 14px;
+
+                &:first-child {
+                  margin-bottom: 0;
+                  font-size: 9px;
+                  line-height: 14px;
+                }
+                &:last-child {
+                  margin-bottom: 0;
+                  font-size: 9px;
+                  line-height: 14px;
+                }
+              }
+            }
+
+            &--birth {
+              .item-text {
+                transform: translate(-25px, 33px);
+              }
+            }
+            &--age {
+              .item-text {
+                transform: rotate(-60deg) translate(-39px, 18px);
+              }
+            }
+            &--location {
+              .item-text {
+                transform: rotate(-120deg) translate(37px, 27px);
+              }
+            }
+            &--zodiac {
+              .item-text {
+                transform: rotate(180deg) translate(27px, 33px);
+              }
+            }
+            &--phone {
+              .item-text {
+                transform: rotate(120deg) translate(36px, 40px);
+              }
+            }
+            &--email {
+              .item-text {
+                transform: rotate(60deg) translate(-34px, 32px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

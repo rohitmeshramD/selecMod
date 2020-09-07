@@ -1,0 +1,258 @@
+<div class="mini-reports-header row">
+  <div class="col-md-6 col-sm-6 mini-reports-header__desc">
+    <h2>Social Media & Consumer Report</h2>
+    <p>
+      {{ person.fName }}’s background suggests that she is wealthy, married, and
+      has two teenage children. She is relatively active on Social Networks.
+    </p>
+  </div>
+  <div class="col-md-6 col-sm-6 mini-reports-header__img">
+    <div class="icon-wrapper">
+      <img src="../../../../../assets/search_flow/social-media.png" />
+    </div>
+  </div>
+</div>
+
+<div class="mini-reports-body">
+  <div class="mini-reports-body-consumer-report">
+    <h1>Consumer Report for {{ person.fName }} {{ person.lName }}</h1>
+    <div class="mini-reports-body-consumer-report__body">
+      <ng-container *ngIf="config.consumerProfileSubSection">
+        <ng-container *ngIf="existFlags.consumerProfileSubSection">
+          <div
+            *ngIf="false && person.consumerProfile?.gender"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img
+                src="../../../../../assets/search_flow/children.png"
+                *ngIf="person.consumerProfile.numberOfChildren"
+              />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Sex
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.gender }}
+              </p>
+            </div>
+          </div>
+          <div
+            *ngIf="false && person.consumerProfile?.maritalStatus"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img src="../../../../../assets/search_flow/occupation.png" />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Marital Status
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.maritalStatus }}
+              </p>
+            </div>
+          </div>
+          <div
+            *ngIf="person.consumerProfile?.numberOfChildren"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img src="../../../../../assets/search_flow/children.svg" />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Children
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.numberOfChildren }}
+              </p>
+            </div>
+          </div>
+          <div
+            *ngIf="person.consumerProfile?.netWorth"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img src="../../../../../assets/search_flow/networth.svg" />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Net Worth
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.netWorth }}
+              </p>
+            </div>
+          </div>
+          <div
+            *ngIf="person.consumerProfile?.occupation"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img src="../../../../../assets/search_flow/occupation.png" />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Occupation
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.occupation }}
+              </p>
+            </div>
+          </div>
+          <!-- <div
+            *ngIf="person.consumerProfile?.occupationGroup"
+            class="col-xs-6 col-sm-4"
+          >
+            <div class="mini-reports-body-consumer-report__body-item">
+              <img src="../../../../../assets/search_flow/occupation.png" />
+              <p class="mini-reports-body-consumer-report__body-item-desc">
+                Occupation Group
+              </p>
+              <p class="mini-reports-body-consumer-report__body-item-value">
+                {{ person.consumerProfile?.occupationGroup }}
+              </p>
+            </div>
+          </div> -->
+        </ng-container>
+        <ng-container *ngIf="!existFlags.consumerProfileSubSection">
+          <div>No Consumer Profile Records Found</div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="mini-reports-body-diagram">
+    <h1>
+      <b>{{ person.fName }} {{ person.lName }}</b
+      >, Age {{ person.age }}
+    </h1>
+    <div>
+      <div class="mini-reports-body-diagram__body row">
+        <ng-container
+          *ngIf="existFlags.socialPhotoSubSection; else noSocialNetwork"
+        >
+          <div
+            class="mini-reports-body-diagram__body-item col-md-3 col-sm-3"
+            *ngFor="let photo of person.photos"
+          >
+            <app-social-card
+              [type]="photo.service"
+              [username]=""
+              [name]="person.fName + person.lName"
+              color="#F8DA8A"
+              imgSrc="../../../../../../assets/search_flow/ic-{{
+                photo.service
+              }}.svg"
+            ></app-social-card>
+          </div>
+        </ng-container>
+        <ng-template #noSocialNetwork>
+          <div>No Social Network Found</div>
+        </ng-template>
+      </div>
+
+      <div class="navigation-wrapper" *ngIf="person.photos.length > 4">
+        <div class="navigation-left" (click)="handleScrollLeft()">
+          <svg
+            width="19"
+            height="34"
+            viewBox="0 0 19 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 33L17 17L1 1" stroke="white" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="navigation-right" (click)="handleScrollRight()">
+          <svg
+            width="19"
+            height="34"
+            viewBox="0 0 19 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 33L17 17L1 1" stroke="white" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-reports-body-social-images">
+    <h1>
+      <b>{{ person.fName }} {{ person.lName }}'s </b>Social Iamges
+    </h1>
+    <div class="mini-reports-body-social-images-wrapper row">
+      <ng-container
+        *ngIf="existFlags.socialPhotoSubSection; else noSocialImage"
+      >
+        <div
+          class="mini-reports-body-social-images__box col-md-3 col-sm-3"
+          *ngFor="let photo of person.photos"
+        >
+          <div class="border-none">
+            <img [src]="photo.url" />
+          </div>
+          <p>
+            SOURCE:
+            <b style="text-transform: capitalize">{{ photo.service }}</b>
+          </p>
+        </div>
+        <div class="mini-reports-body-social-images__box col-md-3 col-sm-3">
+          <div>
+            <img
+              class="img-placeholder"
+              src="../../../../../../assets/search_flow/ic-no-img.svg"
+            />
+          </div>
+          <p>No Image</p>
+        </div>
+        <div class="mini-reports-body-social-images__box col-md-3 col-sm-3">
+          <div>
+            <img
+              class="img-placeholder"
+              src="../../../../../../assets/search_flow/ic-no-img.svg"
+            />
+          </div>
+          <p>No Image</p>
+        </div>
+      </ng-container>
+      <ng-template #noSocialImage>
+        <div>No Social Network Image Found</div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div class="mini-reports-footer">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <app-report-action
+        [downloadPath]="pdfFileName"
+        (setMonitoring)="subscribe($event)"
+      ></app-report-action>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <app-next-report
+        title="FAMILY REPORT"
+        desc="We have more information about Susan, including information and data about her relatives. Please click continue to view the next report."
+        imgUrl="../../../../../../assets/search_flow/family.png"
+        (onNext)="handleNext()"
+      >
+      </app-next-report>
+    </div>
+  </div>
+  <div class="row">
+    <span [tooltip]="goToPrev" content-type="template" width="300">
+      <app-btn-direction
+        [isNext]="false"
+        color="#276FCF"
+        (onClick)="handlePrev()"
+      ></app-btn-direction>
+    </span>
+    <app-btn-direction
+      [isNext]="true"
+      color="#276FCF"
+      (onClick)="handleNext()"
+    ></app-btn-direction>
+  </div>
+
+  <ng-template #goToPrev>
+    <app-tutorial-modal
+      desc="Click PREVIOUS to return to the last report"
+    ></app-tutorial-modal>
+  </ng-template>
+</div>

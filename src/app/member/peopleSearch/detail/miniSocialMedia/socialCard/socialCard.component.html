@@ -1,0 +1,100 @@
+<div class="social-item d-xs-none">
+  <div class="social-item-img">
+    <img [src]="imgSrc" />
+  </div>
+  <div class="social-item-bar">
+    <div [style.backgroundColor]="color"></div>
+    <div [style.backgroundColor]="color"></div>
+  </div>
+  <div class="social-item-note">
+    <div class="social-item-note-quote" [style.borderColor]="color"></div>
+    <div class="social-item-note-card" [style.borderColor]="color">
+      <div class="social-item-note-card__header" [style.borderColor]="color">
+        <img
+          src="../../../../../../../assets/search_flow/ic-profile-round.svg"
+        />
+      </div>
+      <div class="social-item-note-card__body">
+        <p class="social-item-note-card__body-label">USERNAME</p>
+        <p class="social-item-note-card__body-username">
+          {{ username.length > 0 ? username : "None Available for " + name }}
+        </p>
+        <div
+          *ngIf="
+            type === 'linkedin' ||
+            type === 'FB' ||
+            type === 'instagram' ||
+            type === 'twitter'
+          "
+        >
+          <div class="block-login d-sm-none">
+            <p class="btn-label">Login to Your {{ type }}</p>
+            <p class="btn-social">LOGIN NOW</p>
+          </div>
+          <div class="block-create d-sm-none">
+            <p class="btn-label">Need an account?</p>
+            <p class="btn-social">CREATE ACCOUNT</p>
+          </div>
+          <div class="block-login d-md-none d-sm-block">
+            <p class="btn-label">Login to your account now</p>
+            <p class="btn-social">LOGIN NOW</p>
+          </div>
+          <div class="block-create d-md-none d-sm-block">
+            <p class="btn-label">or</p>
+            <p class="btn-social">CREATE ACCOUNT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="social-item d-md-none d-xs-flex">
+  <div class="social-item-img">
+    <img [src]="imgSrc" />
+  </div>
+  <div class="social-item-bar">
+    <div [style.backgroundColor]="color"></div>
+    <div [style.backgroundColor]="color"></div>
+  </div>
+  <div class="social-item-note">
+    <div class="social-item-note-quote" [style.borderColor]="color"></div>
+    <div class="social-item-note-card" [style.borderColor]="color">
+      <div class="social-item-note-card__header" [style.borderColor]="color">
+        <img
+          src="../../../../../../../assets/search_flow/ic-profile-round.svg"
+        />
+      </div>
+      <div class="social-item-note-card__body">
+        <p class="social-item-note-card__body-label">USERNAME</p>
+        <p class="social-item-note-card__body-username">
+          {{ username.length > 0 ? username : "None Available for " + name }}
+        </p>
+        <div
+          class="block-login d-md-none d-sm-block"
+          *ngIf="
+            type === 'linkedin' ||
+            type === 'FB' ||
+            type === 'instagram' ||
+            type === 'twitter'
+          "
+        >
+          <p class="btn-label">Login to your account now</p>
+          <p class="btn-social">LOGIN NOW</p>
+        </div>
+        <div
+          class="block-create d-md-none d-sm-block"
+          *ngIf="
+            type === 'linkedin' ||
+            type === 'FB' ||
+            type === 'instagram' ||
+            type === 'twitter'
+          "
+        >
+          <p class="btn-label">or</p>
+          <p class="btn-social">CREATE ACCOUNT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

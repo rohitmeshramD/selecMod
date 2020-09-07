@@ -1,0 +1,83 @@
+<div id="{{ page }}" class="{{ pageType }} {{ pageCategory }} mini-reports">
+  <app-member-header [uxHelper]="uxHelper"></app-member-header>
+  <ng-container *ngIf="uxHelper.hasUxComposite()">
+    <!-- <app-member-people-search></app-member-people-search> -->
+    <ng-container *ngIf="personSubject.asObservable() | async as person">
+      step: {{ step }}
+      <ng-container *ngIf="step === 0">
+        <app-mini-linear
+          [person]="person"
+          [uxHelper]="uxHelper"
+          [page]="page"
+          [commerceContent]="commerceContent"
+          (goNext)="step = step + 1"
+        >
+        </app-mini-linear>
+      </ng-container>
+      <ng-container *ngIf="step === 1">
+        <app-mini-social-media
+          [person]="person"
+          [uxHelper]="uxHelper"
+          [page]="page"
+          [commerceContent]="commerceContent"
+          (goNext)="step = step + 1"
+          (goPrev)="step = step - 1"
+        >
+        </app-mini-social-media>
+      </ng-container>
+      <ng-container *ngIf="step === 2">
+        <app-mini-family
+          [person]="person"
+          [uxHelper]="uxHelper"
+          [page]="page"
+          [commerceContent]="commerceContent"
+          (goNext)="step = step + 1"
+          (goPrev)="step = step - 1"
+        >
+        </app-mini-family>
+      </ng-container>
+      <ng-container *ngIf="step === 3">
+        <app-mini-life-events
+          [person]="person"
+          [uxHelper]="uxHelper"
+          [page]="page"
+          [commerceContent]="commerceContent"
+          (goNext)="step = step + 1"
+          (goPrev)="step = step - 1"
+        >
+        </app-mini-life-events>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="personSubject.asObservable() | async as person">
+      <app-member-people-search-detail-name
+        [person]="person"
+        [uxHelper]="uxHelper"
+        [page]="page"
+        [commerceContent]="commerceContent"
+      ></app-member-people-search-detail-name>
+    </ng-container>
+
+    <div>
+      <uxtemplate
+        [uxHelper]="uxHelper"
+        [key]="'comp.name-search.copy.featured-on'"
+      ></uxtemplate>
+    </div>
+
+    <div>
+      <uxtemplate
+        [uxHelper]="uxHelper"
+        [key]="'comp.name-search.copy.testimonials'"
+      ></uxtemplate>
+    </div>
+
+    <div class="margin"></div>
+    <app-member-footer [uxHelper]="uxHelper"></app-member-footer>
+    <app-member-disclaimer [uxHelper]="uxHelper"></app-member-disclaimer>
+  </ng-container>
+</div>
+<app-member-closure></app-member-closure>
+
+<!-- <dev-message [uxHelper]="uxHelper" *ngIf="uxHelper.hasUxComposite()"> -->
+<!--</dev-message>-->

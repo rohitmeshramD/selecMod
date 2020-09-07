@@ -1,0 +1,249 @@
+<div class="mini-reports-header row">
+  <div class="col-md-4 col-sm-6 col-xs-12 mini-reports-header__desc">
+    <h2>Family Report</h2>
+    <p>
+      Discover members of {{ person.fName }}’s family. We collect and search
+      data from sources such as addresses, marriage records, birth records, etc.
+      to provide you with the following potential relatives.
+    </p>
+  </div>
+
+  <div class="col-md-8 col-sm-6 col-xs-12 mini-reports-header__img">
+    <img src="../../../../../assets/search_flow/family.png" />
+  </div>
+</div>
+
+<div class="mini-reports-body">
+  <div class="mini-reports-body-relatives">
+    <h2>We found 12 relatives for Susan Smith.</h2>
+    <div class="mini-reports-body-relatives__body row">
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-reports-body-relatives__body row" *ngIf="showAllRelatives">
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+      <div class="relative-card col-md-4 col-sm-6 col-xs-12">
+        <div class="relative-card-wrapper">
+          <div class="relative-card__top">
+            <div class="relative-card__top-img">
+              <img src="../../../../../../assets/search_flow/person-man.png" />
+            </div>
+            <div class="relative-card__top-name">
+              <span>James Smith, </span>
+              <span>Relative</span>
+            </div>
+            <div class="relative-card__top-age">
+              <span>Age 42 • Pembroke Pines, FL</span>
+            </div>
+          </div>
+          <div class="relative-card__bottom">
+            <app-icon-button
+              text="VIEW REPORT"
+              className="btn-view"
+              type="blue"
+              color="white"
+              [rounded]="false"
+              [fullWidth]="false"
+              [shadow]="false"
+              icon="view"
+            >
+            </app-icon-button>
+          </div>
+          <div class="top-left-corner"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mini-reports-body-relatives__view-more"
+      *ngIf="!showAllRelatives"
+    >
+      <div class="btn-view-more" (click)="switchShowAllRelative()">
+        <p>View 6 More Relatives</p>
+        <img
+          src="../../../../../assets/search_flow/ic-show-all-relatives.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mini-reports-footer">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <app-report-action
+        [downloadPath]="pdfFileName"
+        (setMonitoring)="subscribe($event)"
+      ></app-report-action>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <app-next-report
+        title="LIFE EVENTS REPORT"
+        desc="We have more information about Susan, including birth records, educational background, properties, marrriage, and more. Please click continue to view the next report."
+        imgUrl="../../../../../../assets/search_flow/life-events.png"
+        (onNext)="handleNext()"
+      >
+      </app-next-report>
+    </div>
+  </div>
+  <div class="row">
+    <app-btn-direction
+      [isNext]="true"
+      color="#276FCF"
+      (onClick)="handleNext()"
+    ></app-btn-direction>
+  </div>
+</div>
+
+<ng-template #thisIsMe>
+  <app-tutorial-modal
+    desc="Select YES below if this report is your own"
+  ></app-tutorial-modal>
+</ng-template>

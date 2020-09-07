@@ -1,0 +1,208 @@
+<div class="mini-reports-header row">
+  <div class="col-md-6 col-sm-6 col-xs-9 mini-reports-header__desc">
+    <h2>Personal Information</h2>
+    <p>
+      View important personal details about {{ person.fName }}
+      {{ person.lName }} here. You can also add a note about
+      {{ person.fName }} or save this report for easy access later.
+    </p>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-3 mini-reports-header__img">
+    <div class="icon-wrapper">
+      <img src="../../../../../assets/search_flow/ic-favorite.svg" />
+      <img src="../../../../../assets/search_flow/ic-profile.svg" />
+      <img src="../../../../../assets/search_flow/ic-faq.svg" />
+    </div>
+  </div>
+</div>
+
+<div class="mini-reports-body">
+  <div class="mini-reports-body-diagram">
+    <div class="mini-reports-body-diagram__back">
+      <img src="../../../../../assets/search_flow/ic-diagram-user.svg" />
+    </div>
+    <div class="mini-reports-body-diagram__back">
+      <p>{{ person.fName }} {{ person.lName }}</p>
+    </div>
+    <div class="mini-reports-body-diagram__content">
+      <div class="info-item info-item--birth">
+        <div class="item-text">
+          <p>Date of Birth</p>
+          <p>{{ person.dob }}</p>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-birth.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+
+      <div class="info-item info-item--age">
+        <div class="item-text">
+          <p>Age</p>
+          <p>{{ person.age }}</p>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-age.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+
+      <div class="info-item info-item--location">
+        <div class="item-text">
+          <p>Location</p>
+          <p>{{ person.cityState }}</p>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-location.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+
+      <div class="info-item info-item--zodiac">
+        <div class="item-text">
+          <p>Zodiac Sign</p>
+          <p>{{ person.tempClient?.horoscope?.sign }}</p>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-zodiac.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+
+      <div class="info-item info-item--phone">
+        <div class="item-text">
+          <p>Phone Number</p>
+          <p>(954) 555-1234</p>
+          <p>
+            <a [routerLink]="[href]" fragment="phoneNumber">See More</a>
+          </p>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-phone.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+
+      <div class="info-item info-item--email">
+        <div class="item-text">
+          <p>Email Address</p>
+
+          <ng-container *ngIf="getEmails().length > 0; else noEmail">
+            <div style="position: absolute">
+              <ng-container *ngIf="showAllEmail; else allEmail">
+                <p *ngFor="let email of getEmails()">{{ email }}</p>
+              </ng-container>
+              <ng-template #allEmail>
+                <p>{{ getEmails()[0] }}</p>
+              </ng-template>
+              <p *ngIf="getEmails().length > 1" class="btn-see-more">
+                <a (click)="switchShowAllEmail()">{{
+                  showAllEmail ? "Show Less" : "See More"
+                }}</a>
+              </p>
+            </div>
+          </ng-container>
+
+          <ng-template #noEmail>
+            <p>Not Available for {{ person.fName }}</p>
+          </ng-template>
+        </div>
+        <img src="../../../../../assets/search_flow/ic-diagram-email.svg" />
+        <div class="small-circle"></div>
+        <div class="smaller-circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-reports-body-phone" id="phoneNumber">
+    <ng-container *ngFor="let phone of person.phones">
+      <div class="row phone-item">
+        <div class="col-md-4 col-sm-5 col-xs-5">
+          <div>
+            <p>Possible Phone Number</p>
+            <b class="phone-number">{{ phone.number }}</b>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+          <div>
+            <p>Connected</p>
+            <b>{{ phone.connected ? "Yes" : "No" }}</b>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-3">
+          <div *ngIf="phone.type">
+            <p>Line Type</p>
+            <b>{{ phone.type }}</b>
+          </div>
+        </div>
+        <div class="d-md-none d-sm-block col-sm-5 col-xs-5"></div>
+        <div class="col-md-4 col-sm-7 col-xs-7">
+          <div *ngIf="phone.carrier">
+            <p>Carrier</p>
+            <b>{{ phone.carrier }}</b>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="mini-reports-body-me">
+    <div class="switch" [tooltip]="thisIsMe" content-type="template">
+      <p>THIS IS ME</p>
+      <ui-switch
+        size="small"
+        switchColor="#ffffff"
+        defaultBgColor="red"
+        defaultBoColor="#fff0"
+        checkedLabel="YES"
+        uncheckedLabel="NO"
+      ></ui-switch>
+    </div>
+  </div>
+
+  <div class="mini-reports-body-map">
+    <!-- mapEmbed -->
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe
+          width="100%"
+          height="230px"
+          id="gmap_canvas"
+          [src]="personMapUrl"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mini-reports-footer">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <app-report-action
+        [downloadPath]="pdfFileName"
+        (setMonitoring)="subscribe($event)"
+      ></app-report-action>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <app-next-report
+        title="SOCIAL MEDIA REPORT"
+        desc="We have more information about Susan, including her social media accounts and consumer data. Please click continue to view the next report."
+        imgUrl="../../../../../../assets/search_flow/social-media.png"
+        (onNext)="handleNext()"
+      >
+      </app-next-report>
+    </div>
+  </div>
+  <div class="row">
+    <app-btn-direction
+      [isNext]="true"
+      color="#276FCF"
+      (onClick)="handleNext()"
+    ></app-btn-direction>
+  </div>
+</div>
+
+<ng-template #thisIsMe>
+  <app-tutorial-modal
+    desc="Select YES below if this report is your own"
+  ></app-tutorial-modal>
+</ng-template>
