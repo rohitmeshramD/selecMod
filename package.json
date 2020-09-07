@@ -30,6 +30,7 @@
     "moment": "^2.24.0",
     "ng2-tooltip-directive": "^2.1.9",
     "ngx-ui-switch": "^8.0.0",
+    "node-sass": "^4.14.1",
     "rxjs": "^6.5.2",
     "url-search-params-polyfill": "^2.0.3",
     "zone.js": "^0.8.29"
