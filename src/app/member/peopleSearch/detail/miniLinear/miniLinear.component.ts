@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, EventEmitter } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
-import { PersonDetail } from "../../../personDetail";
+// import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
+// import { PersonDetail } from "../../../personDetail";
 
 declare var $: any;
 
@@ -10,28 +10,29 @@ declare var $: any;
   templateUrl: 'miniLinear.component.html',
   styleUrls: ['miniLinear.component.scss'],
 })
-export class MiniLinearComponent extends PersonDetail implements OnInit, OnDestroy, OnChanges {
+export class MiniLinearComponent  implements OnInit, OnDestroy, OnChanges {
   href: string = "";
   showAllEmail: boolean = false;
   @Output() goNext = new EventEmitter<any>();
 
-  constructor(public serviceHelperService: ServiceHelperService,
+  constructor(
+    // public serviceHelperService: ServiceHelperService,
     public changeDetectorRef: ChangeDetectorRef,
     activatedRoute: ActivatedRoute,
     private router: Router) {
-    super(serviceHelperService, activatedRoute);
+    // super(serviceHelperService, activatedRoute);
   }
 
   ngOnInit() {
     this.href = this.router.url;
 
-    return this.init().then(() => {
-      this.changeDetectorRef.detectChanges();
-    });
+    // return this.init().then(() => {
+    //   this.changeDetectorRef.detectChanges();
+    // });
   }
 
   ngOnDestroy() {
-    return super.onDestroy();
+    // return super.onDestroy();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -46,7 +47,7 @@ export class MiniLinearComponent extends PersonDetail implements OnInit, OnDestr
         trigger: "click",
       });
     }, 0);
-    return super.init();
+    // return super.init();
   }
 
   adjustAnchorOffset() {
@@ -55,7 +56,7 @@ export class MiniLinearComponent extends PersonDetail implements OnInit, OnDestr
   }
 
   getEmails() {
-    return this.person.emailAddresses.map(item => item.address);
+    // return this.person.emailAddresses.map(item => item.address);
   }
 
   switchShowAllEmail() {

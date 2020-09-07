@@ -9,8 +9,8 @@ import {
   EventEmitter,
 } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
-import { PersonDetail } from "../../../personDetail";
+// import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
+// import { PersonDetail } from "../../../personDetail";
 
 declare var $: any;
 
@@ -20,31 +20,31 @@ declare var $: any;
   styleUrls: ["miniLifeEvents.component.scss"],
 })
 export class MiniLifeEventsComponent
-  extends PersonDetail
+  // extends PersonDetail
   implements OnInit, OnDestroy, OnChanges {
   href = "";
   showAllRelatives = false;
   @Output() goNext = new EventEmitter<any>();
 
   constructor(
-    public serviceHelperService: ServiceHelperService,
+    // public serviceHelperService: ServiceHelperService,
     public changeDetectorRef: ChangeDetectorRef,
     activatedRoute: ActivatedRoute,
     private router: Router
   ) {
-    super(serviceHelperService, activatedRoute);
+    // super(serviceHelperService, activatedRoute);
   }
 
   ngOnInit() {
     this.href = this.router.url;
 
-    return this.init().then(() => {
-      this.changeDetectorRef.detectChanges();
-    });
+    // return this.init().then(() => {
+    //   this.changeDetectorRef.detectChanges();
+    // });
   }
 
   ngOnDestroy() {
-    return super.onDestroy();
+    // return super.onDestroy();
   }
 
   ngOnChanges(changes: SimpleChanges): void {}
@@ -57,7 +57,7 @@ export class MiniLifeEventsComponent
         trigger: "click",
       });
     }, 0);
-    return super.init();
+    // return super.init();
   }
 
   adjustAnchorOffset() {

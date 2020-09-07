@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, Output, EventEmitter, SimpleChanges } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
-import { PersonDetail } from "../../../personDetail";
+// import { ServiceHelperService } from "../../../../../../clientCommon/services/serviceHelper.service";
+// import { PersonDetail } from "../../../personDetail";
 
 declare var $: any;
 
@@ -10,30 +10,31 @@ declare var $: any;
   templateUrl: 'miniSocialMedia.component.html',
   styleUrls: ['miniSocialMedia.component.scss'],
 })
-export class MiniSocialMediaComponent extends PersonDetail implements OnInit, OnDestroy, OnChanges {
+export class MiniSocialMediaComponent implements OnInit, OnDestroy, OnChanges {
   href: string = "";
   scrollLeft: number = 0;
   @Output() goPrev = new EventEmitter<any>();
   @Output() goNext = new EventEmitter<any>();
 
-  constructor(public serviceHelperService: ServiceHelperService,
+  constructor(
+    // public serviceHelperService: ServiceHelperService,
     public changeDetectorRef: ChangeDetectorRef,
     activatedRoute: ActivatedRoute,
     private router: Router) {
-    super(serviceHelperService, activatedRoute);
+    // super(serviceHelperService, activatedRoute);
   }
 
   ngOnInit() {
     this.href = this.router.url;
 
-    return this.init().then(() => {
-      console.log(this.person);
-      this.changeDetectorRef.detectChanges();
-    });
+    // return this.init().then(() => {
+    //   // console.log(this.person);
+    //   this.changeDetectorRef.detectChanges();
+    // });
   }
 
   ngOnDestroy() {
-    return super.onDestroy();
+    // return super.onDestroy();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -48,7 +49,7 @@ export class MiniSocialMediaComponent extends PersonDetail implements OnInit, On
         trigger: "click",
       });
     }, 0);
-    return super.init();
+    // return super.init();
   }
 
   adjustAnchorOffset() {
@@ -72,10 +73,10 @@ export class MiniSocialMediaComponent extends PersonDetail implements OnInit, On
     // }
 
     // this.scrollLeft += 300;
-    const container = document.querySelector('.mini-reports-body-diagram__body');
-    if (container.scrollLeft < this.person.photos.length * 300) {
-      container.scrollLeft += 300;
-    }
+    // const container = document.querySelector('.mini-reports-body-diagram__body');
+    // if (container.scrollLeft < this.person.photos.length * 300) {
+    //   container.scrollLeft += 300;
+    // }
   }
 
   handleScrollLeft() {
