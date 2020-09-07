@@ -1,0 +1,8 @@
+<div class="custom-btn {{ customClass }}" (click)="handleClick()">
+  <div class="custom-btn__icon" *ngIf="icon !== ''">
+    <img src="{{ imgSrc }}" alt="image" />
+  </div>
+  <div class="custom-btn__text">
+    <span>{{ text }}</span>
+  </div>
+</div>

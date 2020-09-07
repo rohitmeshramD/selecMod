@@ -1,0 +1,81 @@
+// custom button styles
+.custom-btn {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+
+    & > img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__text {
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  &:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+.custom-btn-blue {
+  background-color: $back-blue;
+}
+.custom-btn-gold {
+  background-color: $back-gold;
+}
+.custom-btn-green {
+  background-color: $back-green;
+}
+.custom-btn-transparent {
+  background-color: transparent;
+}
+
+.custom-btn-border-blue {
+  border: solid 1px $color-blue;
+}
+
+.custom-btn-color-white {
+  color: $white;
+}
+.custom-btn-color-black {
+  color: $black;
+}
+.custom-btn-color-blue {
+  color: $back-blue;
+}
+.custom-btn-color-gold {
+  color: $back-gold;
+}
+.custom-btn-color-green {
+  color: $back-green;
+}
+
+.custom-btn-rounded {
+  border-radius: 25px;
+  padding: 8px 12px;
+}
+.custom-btn-full-width {
+  width: 100%;
+}
+.custom-btn-shadow {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.custom-btn-icon-right {
+  .custom-btn__icon {
+    margin-left: 8px;
+    margin-right: 0;
+    order: 2;
+  }
+}

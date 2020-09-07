@@ -1,0 +1,64 @@
+@import "../../node_modules/@ng-select/ng-select/themes/default.theme.css";
+
+@import "./variables.scss";
+@import "./buttons.scss";
+
+// ng-select style
+ng-select.ng-invalid.ng-touched .ng-select-container {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.ng-select.ng-select-single .ng-select-container {
+  border: none;
+  outline: none;
+  min-height: 32px;
+  height: 32px;
+  box-shadow: none!important;
+}
+.ng-select.ng-select-single .ng-select-container .ng-value-container,
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  color: $color-primary;
+}
+
+.modal-backdrop {
+  opacity: 0!important;
+}
+
+.switch-xs {
+  & > span {
+    height: 16px!important;
+  }
+  .switch-pane {
+    width: 35px;
+    height: 15px;
+
+    & > span {
+      line-height: 17px!important;
+    }
+  }
+  small {
+    width: 15px!important;
+    height: 15px!important;
+  }
+}
+
+.search-text-before > h2 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 37px;
+  color: $color-primary;
+}
+
+@media (max-width: 997px) {
+  .search-text-before > h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-text-before > h2 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

@@ -9,13 +9,14 @@
       </div>
     </div>
     <div class="report-action-item__bottom">
-      <span data-toggle="modal" data-target="#add-note-modal" [tooltip]="addNoteAction" content-type="template" width="300">
-        <app-icon-button text="ADD A NOTE" className="btn-add-note" type="green" color="white" [rounded]="false"
+      <!-- <span data-toggle="modal" data-target="#add-note-modal" [tooltip]="addNoteAction" content-type="template" width="300"> -->
+      <span data-toggle="modal" data-target="#add-note-modal"  content-type="template" width="300">
+        <!-- <app-icon-button text="ADD A NOTE" className="btn-add-note" type="green" color="white" [rounded]="false"
           [fullWidth]="false" [shadow]="false" icon="edit" (onClick)="addNote()">
-        </app-icon-button>
+        </app-icon-button> -->
       </span>
     </div>
-    <app-modal-add-note></app-modal-add-note>
+    <!-- <app-modal-add-note></app-modal-add-note> -->
   </div>
 
   <div class="report-action-item">
@@ -28,13 +29,14 @@
       </div>
     </div>
     <div class="report-action-item__bottom">
-      <span data-toggle="modal" data-target="#save-report-modal" [tooltip]="saveReportAction" content-type="template">
-        <app-icon-button text="SAVE REPORT" className="btn-add-note" type="green" color="white" [rounded]="false"
+      <!-- <span data-toggle="modal" data-target="#save-report-modal" [tooltip]="saveReportAction" content-type="template"> -->
+      <span data-toggle="modal" data-target="#save-report-modal"  content-type="template">
+        <!-- <app-icon-button text="SAVE REPORT" className="btn-add-note" type="green" color="white" [rounded]="false"
           [fullWidth]="false" [shadow]="false" icon="download" (onClick)="addNote()">
-        </app-icon-button>
+        </app-icon-button> -->
       </span>
     </div>
-    <app-modal-save-report [downloadPath]="downloadPath"></app-modal-save-report>
+    <!-- <app-modal-save-report [downloadPath]="downloadPath"></app-modal-save-report> -->
   </div>
 
   <div class="report-action-item">
@@ -47,13 +49,14 @@
       </div>
     </div>
     <div class="report-action-item__bottom">
-      <span data-toggle="modal" data-target="#get-alerts-modal" [tooltip]="getAlertsAction" content-type="template">
-        <app-icon-button text="GET ALERTS" className="btn-add-note" type="green" color="white" [rounded]="false"
+      <!-- <span data-toggle="modal" data-target="#get-alerts-modal" [tooltip]="getAlertsAction" content-type="template"> -->
+      <span data-toggle="modal" data-target="#get-alerts-modal" content-type="template">
+        <!-- <app-icon-button text="GET ALERTS" className="btn-add-note" type="green" color="white" [rounded]="false"
           [fullWidth]="false" [shadow]="false" icon="bell" (onClick)="addNote()">
-        </app-icon-button>
+        </app-icon-button> -->
       </span>
     </div>
-    <app-modal-get-alerts (setMonitoring)="handleSetMonitoring($event)"></app-modal-get-alerts>
+    <!-- <app-modal-get-alerts (setMonitoring)="handleSetMonitoring($event)"></app-modal-get-alerts> -->
   </div>
 </div>
 

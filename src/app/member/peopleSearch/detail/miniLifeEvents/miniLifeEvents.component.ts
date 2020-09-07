@@ -52,10 +52,10 @@ export class MiniLifeEventsComponent
   init() {
     // Tooltip init
     setTimeout(() => {
-      $(".tooltip-container").tooltip({
-        html: true,
-        trigger: "click",
-      });
+      // $(".tooltip-container").tooltip({
+      //   html: true,
+      //   trigger: "click",
+      // });
     }, 0);
     // return super.init();
   }
